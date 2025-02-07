@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import ChooseEnemiesImage from '../assets/images/Inimigos DnD/Centaur.png'
 export default function ChooseYourEnemies(){
     return(
         <>
@@ -7,7 +8,7 @@ export default function ChooseYourEnemies(){
            
             
             <div className="flex items-center  bg-gray-900 rounded-xl p-5 shadow-lg max-w-lg w-full border border-fuchsia-950">
-                <img src="src\assets\images\Inimigos DnD\Goblin_idle.gif" className="w-20 h-20 rounded-lg" alt="Goblin" />
+                <img src={ChooseEnemiesImage} className="w-20 h-20 rounded-lg" alt="Goblin" />
                 
                 <div className="ml-6 w-56">
                     <h2 className="text-xl font-semibold text-fuchsia-300">Goblin</h2>

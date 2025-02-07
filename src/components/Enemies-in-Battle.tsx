@@ -1,9 +1,10 @@
+import BattleImage from '../assets/images/Inimigos DnD/Stirge.png'
 export default function EnemiesInBattle() {
     return (
         <>
             <div className="bg-gray-900 border-2 border-fuchsia-950 w-screen h-auto flex items-center justify-evenly ">
                 <div className="flex flex-col items-center "> 
-                    <img src="src\assets\images\Inimigos DnD\Banshee.png" alt="Goblin" className="w-24" /> <p>CA: 15</p>
+                    <img src={BattleImage} alt="Goblin" className="w-24" /> <p>CA: 15</p>
                     </div>
                 <div>
                     <div className="text-center ">
