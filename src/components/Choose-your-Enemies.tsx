@@ -7,7 +7,7 @@ export default function ChooseYourEnemies(){
            
             
             <div className="flex items-center  bg-gray-900 rounded-xl p-5 shadow-lg max-w-lg w-full border border-fuchsia-950">
-                <img src="public\images\Carrion Crawler.png" className="w-20 h-20 rounded-lg" alt="Goblin" />
+                <img src="src\assets\images\Inimigos DnD\Goblin_idle.gif" className="w-20 h-20 rounded-lg" alt="Goblin" />
                 
                 <div className="ml-6 w-56">
                     <h2 className="text-xl font-semibold text-fuchsia-300">Goblin</h2>
