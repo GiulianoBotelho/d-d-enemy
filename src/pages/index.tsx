@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom"
+import HomeDice from '../assets/images/dice2.png'
 export default function Home(){
     return(
         <>  
         <div className="flex items-center justify-center flex-col">
         <figure className="flex flex-col justify-center h-64 items-center">
             
-            <img src="src\assets\images\dice2.png" 
+            <img src={HomeDice}
             alt="Sword" 
             className="w-60"
             />
