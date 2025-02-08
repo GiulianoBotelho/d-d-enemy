@@ -2,17 +2,24 @@ import { Link } from "react-router-dom"
 import { Monsters } from "../data/Monsters"
 import { useState } from "react"
 export default function ChooseYourEnemies(){
-    const [enemies] = useState(Monsters)
-    const [selectEnemies,setSelectEnemies] = useState(0)
+    const [enemies, setEnemies] = useState(Monsters)
+    const [selectedEnemies, setSelectedEnemies] =  useState<{[key:number]: number}>({})
 
-    const upEnemies = () =>{    
-            setSelectEnemies(prev => prev + 1)
-}
-const downEnemies = () =>{
-    if(selectEnemies > 0)
-    setSelectEnemies(prev => prev -1)
-}
+    const upEnemies  = ((id:number) =>{
+        setSelectedEnemies((prev) =>({
+            ...prev,
+            [id]:(prev[id] || 0) + 1,
+        }))
+    })
 
+    const downEnemies = (id:number) =>{
+        setSelectedEnemies((prev) =>({
+            ...prev,
+            [id]: prev[id] > 0 ? prev[id] - 1 : 0,
+        }))
+    }
+    console.log(selectedEnemies)
+    console.log(enemies)
     return(
         <>
           <div className="h-screen bg-black text-white p-6 flex flex-col items-center text-center gap-3 ">
@@ -29,12 +36,12 @@ const downEnemies = () =>{
                </div>
                
                <div className="flex items-center bg-gray-800 rounded-lg p-2 w-16 justify-between ">
-                   <button onClick={downEnemies} className="px-2 py-1 w-4 bg-fuchsia-600 text-white rounded-l-lg hover:bg-fuchsia-700">-</button>
+                   <button onClick={() => downEnemies(item.id)} className="px-2 py-1 w-4 bg-fuchsia-600 text-white rounded-l-lg hover:bg-fuchsia-700">-</button>
                    <h2>
-                   {selectEnemies}
+                   {selectedEnemies[item.id] || 0}
                    
                    </h2>
-                   <button onClick={upEnemies} className="px-2 py-1 w-4 bg-fuchsia-600 text-white rounded-r-lg hover:bg-fuchsia-700">+</button>
+                   <button onClick={() => upEnemies(item.id)} className="px-2 py-1 w-4 bg-fuchsia-600 text-white rounded-r-lg hover:bg-fuchsia-700">+</button>
                </div>
            </div>
                 
