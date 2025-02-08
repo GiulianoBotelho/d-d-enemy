@@ -13,11 +13,10 @@ export default function EnemiesInBattle() {
         <>
                 {enemies.length > 0 ? (
                     enemies.map((enemy:any, index:number) => (
-                        <div className="bg-gray-900 border-2 border-fuchsia-950 w-screen  flex flex-col items-center justify-evenly gap-6">
-                        <div key={index} className="flex flex-col items-center">
+                        <div className="bg-gray-900  border-fuchsia-950 w-screen  flex flex-col items-center justify-evenly gap-6">
+                        <div key={index} className="flex  items-center  w-screen">
                             <img src={enemy.image} alt={enemy.name} className="w-24" />
                             <p>CA: {enemy.ac}</p>
-
                             <div>
                                 <div className="text-center">
                                     <h1>{enemy.name}</h1>
