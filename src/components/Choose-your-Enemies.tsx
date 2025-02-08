@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { Monsters } from "../data/Monsters"
 import { useState } from "react"
 export default function ChooseYourEnemies(){
-    const [enemies, setEnemies] = useState(Monsters)
+    const [enemies] = useState(Monsters)
     const [selectEnemies,setSelectEnemies] = useState(0)
 
     const upEnemies = () =>{    
