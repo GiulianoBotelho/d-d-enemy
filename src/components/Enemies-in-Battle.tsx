@@ -1,4 +1,3 @@
-import BattleImage from '../assets/images/Inimigos DnD/Stirge.png';
 import { useLocation } from 'react-router-dom';
 
 export default function EnemiesInBattle() {
