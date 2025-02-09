@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { Monsters } from "../data/Monsters";
+import { Poke } from "../data/monster-tests";
 import { useState } from "react";
+import { style } from "framer-motion/client";
 
 export default function ChooseYourEnemies() {
-  const [enemies] = useState(Monsters);
+  const [enemies] = useState(Poke);
   const [selectedEnemies, setSelectedEnemies] = useState<any[]>([]);
   const navigate = useNavigate();
 
@@ -31,7 +32,7 @@ export default function ChooseYourEnemies() {
     });
   };
 
-  // Função para navegar para a página de batalha com os inimigos selecionados
+
   const handleStartBattle = () => {
     const selectedEnemiesParam = encodeURIComponent(JSON.stringify(selectedEnemies));
     navigate(`/battle?enemies=${selectedEnemiesParam}`);
@@ -79,7 +80,8 @@ export default function ChooseYourEnemies() {
       })}
 
       <button
-        className="w-48 bg-fuchsia-800 rounded-2xl text-lg hover:bg-fuchsia-600"
+      disabled={selectedEnemies.length === 0}
+      className={`w-48 bg-fuchsia-800 rounded-2xl text-lg hover:bg-fuchsia-600 ${selectedEnemies.length === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
         onClick={handleStartBattle}
       >
         Começar
