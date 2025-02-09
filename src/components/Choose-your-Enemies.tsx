@@ -18,18 +18,14 @@ export default function ChooseYourEnemies() {
     }
   };
 
-  const downEnemies = (id: number) => {
-    setSelectedEnemies((prev) => {
-      const index = prev.findIndex((enemy) => enemy.id === id);
-      if (index !== -1) {
-        const updatedEnemies = [...prev];
-        updatedEnemies.splice(index, 1);
-        console.log("Novo array de inimigos (removido):", updatedEnemies);
-        return updatedEnemies;
-      }
-      return prev;
-    });
-  };
+ const downEnemies = (id:number) =>{
+  setSelectedEnemies((prev) =>{
+    const updatedEnemies = prev.filter((enemy, index)=>{
+       return !(enemy.id === id && prev.findIndex((e) => e.id === id) === index)
+      })
+    return updatedEnemies
+  })
+ }
 
 
   const handleStartBattle = () => {
