@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Poke } from "../data/monster-tests";
 import { useState } from "react";
-import { style } from "framer-motion/client";
 
 export default function ChooseYourEnemies() {
   const [enemies] = useState(Poke);
