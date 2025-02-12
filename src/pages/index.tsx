@@ -15,7 +15,7 @@ export default function Home(){
         </figure>
         <div className="flex w-screen  justify-evenly">
 
-            <button className="bg-fuchsia-800 rounded-4xl w-48 h-8 text-fuchsia-100"><Link to='/Choose-your-Enemies'>Começar</Link></button>
+        <Link to='/Choose-your-Enemies'> <button className="bg-fuchsia-800 rounded-4xl w-48 h-8 text-fuchsia-100">Começar</button></Link>
         </div>
         </div>
         </>

@@ -26,8 +26,6 @@ export default function ChooseYourEnemies() {
       return updatedEnemies
     })
   }
-
-
   const handleStartBattle = () => {
     const selectedEnemiesParam = encodeURIComponent(JSON.stringify(selectedEnemies));
     navigate(`/battle?enemies=${selectedEnemiesParam}`);
@@ -46,7 +44,6 @@ export default function ChooseYourEnemies() {
             className="flex items-center bg-gray-900 rounded-xl p-5 shadow-lg max-w-lg w-full border border-fuchsia-950"
           >
             <img src={item.image} className="w-20 h-20 rounded-lg" alt={item.name} />
-
             <div className="ml-6 w-56">
               <h2 className="text-xl font-semibold text-fuchsia-300">{item.name}</h2>
               <p className="text-md text-gray-300">
@@ -54,7 +51,6 @@ export default function ChooseYourEnemies() {
                 <span className="font-bold text-white">{item.hp}</span>
               </p>
             </div>
-
             <div className="flex items-center bg-gray-800 rounded-lg p-2 w-16 justify-between">
               <button
                 onClick={() => downEnemies(item.id)}
@@ -73,7 +69,6 @@ export default function ChooseYourEnemies() {
           </div>
         );
       })}
-
       <button
         disabled={selectedEnemies.length === 0}
         className={`w-48 bg-fuchsia-800 rounded-2xl text-lg hover:bg-fuchsia-600 ${selectedEnemies.length === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
