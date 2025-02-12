@@ -39,7 +39,7 @@ export default function EnemiesInBattle() {
         <>
 
         <Header/>
-        <h1>Começou a Batalha!</h1>
+        
             {currentEnemies.length > 0 ? (
                 currentEnemies.map((enemy: any, index: number) => (
                     <div key={index} className="bg-gray-900 border-fuchsia-950 w-screen flex flex-col items-center justify-evenly gap-6">
