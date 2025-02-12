@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import Dice from '../assets/images/d20.png'
+import Header from "./Header";
 export default function EnemiesInBattle() {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
@@ -36,10 +37,12 @@ export default function EnemiesInBattle() {
 
     return (
         <>
+
+        <Header/>
+        <h1>Começou a Batalha!</h1>
             {currentEnemies.length > 0 ? (
                 currentEnemies.map((enemy: any, index: number) => (
                     <div key={index} className="bg-gray-900 border-fuchsia-950 w-screen flex flex-col items-center justify-evenly gap-6">
-                        <h1>Começou a Batalha!</h1>
                         <div className="flex items-center w-screen">
                             <img src={enemy.image} alt={enemy.name} className="w-24" />
                             <p>CA: {enemy.ac}</p>

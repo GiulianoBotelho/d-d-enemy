@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Monsters } from "../data/Monsters";
 import { useState } from "react";
+import Header from "./Header";
 
 export default function ChooseYourEnemies() {
   const [enemies] = useState(Monsters);
@@ -33,7 +34,8 @@ export default function ChooseYourEnemies() {
 
   return (
     <div className="h-screen bg-black text-white p-6 flex flex-col items-center text-center gap-3">
-      <h1 className="text-2xl font-bold mb-6">Escolha seus inimigos para o combate</h1>
+     <Header/>
+      <h1 className="text-slate-100 text-lg font-bold mb-6">Escolha seus inimigos para o combate</h1>
 
       {enemies.map((item) => {
         const count = selectedEnemies.filter((e) => e.id === item.id).length;
