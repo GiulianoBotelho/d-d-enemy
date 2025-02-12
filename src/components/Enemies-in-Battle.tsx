@@ -82,15 +82,33 @@ export default function EnemiesInBattle() {
                 ))
             ) : (
                 <motion.div
-                    className="text-white  font-bold text-center mt-10 px-4 py-2 rounded-lg shadow-lg flex items-center justify-center h-screen flex-col gap-3"
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1.1, opacity: 1 }}
-                    transition={{ type: "spring", stiffness: 150, damping: 20 }}
-                >
-                    <img src={Dice} className="w-20" alt="" />
-                    <p className=" text-3xl font-semibold text-amber-400"> Vitória!</p>
-                  <Link to='/'> <button className=" border-1 border-fuchsia-800 w-32 rounded-2xl text-fuchsia-800 text-lg font-bold">Inicio</button></Link>
-                </motion.div>
+  className="text-white font-bold text-center mt-10 px-4 py-2 rounded-lg shadow-lg flex items-center justify-center h-screen flex-col gap-3"
+  initial={{ scale: 0, opacity: 0 }}
+  animate={{ scale: 1.1, opacity: 1 }}
+  transition={{ type: "spring", stiffness: 150, damping: 20 }}
+>
+  <motion.img
+    src={Dice}
+    className="w-20"
+    alt=""
+    initial={{ opacity: 0, scale: 0.5, rotate: -360 }}
+    animate={{ opacity: 1, scale: 1, rotate: 0 }}
+    transition={{
+      duration: 0.6,
+      ease: "easeOut",
+      type: "spring",
+      stiffness: 200,
+      damping: 10
+    }}
+  />
+  <p className="text-3xl font-semibold text-amber-400">Vitória!</p>
+  <Link to="/">
+    <button className="border-1 border-fuchsia-800 w-32 rounded-2xl text-fuchsia-800 text-lg font-bold">
+      Início
+    </button>
+  </Link>
+</motion.div>
+
             )}
         </>
     );
