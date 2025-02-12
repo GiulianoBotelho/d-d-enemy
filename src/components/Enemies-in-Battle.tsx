@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-
+import Dice from '../assets/images/d20.png'
 export default function EnemiesInBattle() {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
@@ -87,8 +87,8 @@ export default function EnemiesInBattle() {
                     animate={{ scale: 1.1, opacity: 1 }}
                     transition={{ type: "spring", stiffness: 150, damping: 20 }}
                 >
-                    
-                    <p className=" text-3xl"> Vitória!</p>
+                    <img src={Dice} className="w-20" alt="" />
+                    <p className=" text-3xl font-semibold text-amber-400"> Vitória!</p>
                   <Link to='/'> <button className=" border-1 border-fuchsia-800 w-32 rounded-2xl text-fuchsia-800 text-lg font-bold">Inicio</button></Link>
                 </motion.div>
             )}

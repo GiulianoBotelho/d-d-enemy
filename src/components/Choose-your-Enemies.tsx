@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { Poke } from "../data/monster-tests";
+import { Monsters } from "../data/Monsters";
 import { useState } from "react";
 
 export default function ChooseYourEnemies() {
-  const [enemies] = useState(Poke);
+  const [enemies] = useState(Monsters);
   const [selectedEnemies, setSelectedEnemies] = useState<any[]>([]);
   const navigate = useNavigate();
 
@@ -18,14 +18,14 @@ export default function ChooseYourEnemies() {
     }
   };
 
- const downEnemies = (id:number) =>{
-  setSelectedEnemies((prev) =>{
-    const updatedEnemies = prev.filter((enemy, index)=>{
-       return !(enemy.id === id && prev.findIndex((e) => e.id === id) === index)
+  const downEnemies = (id: number) => {
+    setSelectedEnemies((prev) => {
+      const updatedEnemies = prev.filter((enemy, index) => {
+        return !(enemy.id === id && prev.findIndex((e) => e.id === id) === index)
       })
-    return updatedEnemies
-  })
- }
+      return updatedEnemies
+    })
+  }
 
 
   const handleStartBattle = () => {
@@ -75,8 +75,8 @@ export default function ChooseYourEnemies() {
       })}
 
       <button
-      disabled={selectedEnemies.length === 0}
-      className={`w-48 bg-fuchsia-800 rounded-2xl text-lg hover:bg-fuchsia-600 ${selectedEnemies.length === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
+        disabled={selectedEnemies.length === 0}
+        className={`w-48 bg-fuchsia-800 rounded-2xl text-lg hover:bg-fuchsia-600 ${selectedEnemies.length === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
         onClick={handleStartBattle}
       >
         Começar
