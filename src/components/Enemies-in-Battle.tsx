@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import Dice from '../assets/images/d20.png';
 import Header from "./Header";
+import { div } from "framer-motion/client";
 
 export default function EnemiesInBattle() {
     const location = useLocation();
@@ -38,7 +39,7 @@ export default function EnemiesInBattle() {
 
     return (
         <>
-            <Header />
+           {currentEnemies.length > 0 ? ( <Header />): ("")}
 
             {currentEnemies.length > 0 ? (
                 currentEnemies.map((enemy: any, index: number) => (

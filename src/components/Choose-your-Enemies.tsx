@@ -35,7 +35,6 @@ export default function ChooseYourEnemies() {
 
   return (
     <div className="h-screen bg-black text-white p-6 flex flex-col items-center text-center gap-3">
-      <Header />
       <h1 className="text-slate-100 text-lg font-bold mb-6">Escolha seus inimigos para o combate</h1>
 
       {enemies.map((item) => {
