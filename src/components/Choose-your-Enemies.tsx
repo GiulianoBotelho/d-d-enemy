@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Monsters } from "../data/Monsters";
 import { useState } from "react";
 import Header from "./Header";
+import { Swords } from "lucide-react";
 
 export default function ChooseYourEnemies() {
   const [enemies] = useState(Monsters);
@@ -34,7 +35,7 @@ export default function ChooseYourEnemies() {
 
   return (
     <div className="h-screen bg-black text-white p-6 flex flex-col items-center text-center gap-3">
-     <Header/>
+      <Header />
       <h1 className="text-slate-100 text-lg font-bold mb-6">Escolha seus inimigos para o combate</h1>
 
       {enemies.map((item) => {
@@ -53,14 +54,15 @@ export default function ChooseYourEnemies() {
                 <span className="font-bold text-white">{item.hp}</span>
               </p>
             </div>
-            <div className="flex items-center bg-gray-800 rounded-lg p-2 w-16 justify-between">
+
+            <div className="flex items-center bg-gray-800 rounded-lg p-2 w-20 justify-between">
               <button
                 onClick={() => downEnemies(item.id)}
                 className="px-2 py-1 w-4 bg-fuchsia-600 text-white rounded-l-lg hover:bg-fuchsia-700"
               >
                 -
               </button>
-              <h2>{count}</h2>
+              <h2 className="text-white font-semibold">{count}</h2>
               <button
                 onClick={() => upEnemies(item.id)}
                 className="px-2 py-1 w-4 bg-fuchsia-600 text-white rounded-r-lg hover:bg-fuchsia-700"
@@ -71,13 +73,17 @@ export default function ChooseYourEnemies() {
           </div>
         );
       })}
+
       <button
         disabled={selectedEnemies.length === 0}
-        className={`w-48 bg-fuchsia-800 rounded-2xl text-lg hover:bg-fuchsia-600 ${selectedEnemies.length === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
+        className={` flex items-center justify-center gap-2 h-12 w-full max-w-[350px] bg-fuchsia-800 rounded-2xl text-lg text-fuchsia-100 tracking-wide transition-all duration-200 ease-linear shadow-md hover:shadow-lg hover:bg-fuchsia-600 ${selectedEnemies.length === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
         onClick={handleStartBattle}
       >
-        Começar
+        <span>Começar</span>
+        <Swords />
       </button>
+
     </div>
+
   );
 }
