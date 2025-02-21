@@ -66,7 +66,7 @@ export default function Characters() {
               className="bg-fuchsia-800 rounded-4xl w-full py-2 text-sm font-semibold hover:bg-fuchsia-700 transition"
               onClick={() => applyDamage(Number(damageInput))}
             >
-              Aplicar Dano
+              Aplicar
             </button>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function Characters() {
               className="bg-emerald-700 w-full py-2 text-white rounded-lg mt-4 hover:bg-emerald-600 transition"
               onClick={handleHeal}
             >
-              Aplicar Cura
+              Aplicar
             </button>
             <button
               className="bg-red-500 w-full py-2 text-white rounded-lg mt-2 hover:bg-red-400 transition"
