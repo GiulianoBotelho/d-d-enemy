@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Monsters } from "../data/Monsters";
 import { useState } from "react";
-import Header from "./Header";
 import { Swords } from "lucide-react";
 
 export default function ChooseYourEnemies() {
