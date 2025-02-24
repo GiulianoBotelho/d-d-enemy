@@ -16,19 +16,19 @@ export default function Characters() {
   const [damageInput, setDamageInput] = useState("");
   const [healAmount, setHealAmount] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent,setModalContent] = useState("");
-  const [levelUpModal, setLevelUpModal] = useState(false)
+  const [ModalContent,setModalContent] = useState('')
+  const [LevelUpModal,setLevelUpModal] = useState(false)
   useEffect(() => {
     localStorage.setItem(`char_hp_${char.id}`, currentHp);
   }, [currentHp]);
 
-  const applyDamage = (damage) => {
-    setCurrentHp((prevHp) => Math.max(prevHp - damage, 0));
+  const applyDamage = (damage:number) => {
+    setCurrentHp((prevHp:number) => Math.max(prevHp - damage, 0));
     setDamageInput("");
   };
 
   const handleHeal = () => {
-    setCurrentHp((prevHp) => Math.min(prevHp + healAmount, char.hpMax));
+    setCurrentHp((prevHp:number) => Math.min(prevHp + healAmount, char.hpMax));
     setIsModalOpen(false);
   };
   const openModal = (value: string) => {
@@ -60,6 +60,8 @@ export default function Characters() {
         ]}
         onSelect={openModal}
       />
+      {ModalContent}
+      {LevelUpModal}
       </div>
 
       <div className="w-full  rounded-full mt-4">
