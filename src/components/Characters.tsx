@@ -37,7 +37,7 @@ export default function Characters() {
   };
 
   return (
-    <div className="bg-gray-900 w-120  rounded-2xl flex flex-col items-center justify-evenly gap-6 p-4">
+    <div className="bg-gray-900 w-screen rounded-2xl flex flex-col items-center justify-evenly gap-6 p-4">
       <div className="flex items-center w-full justify-between bg-gray-800 p-4 rounded-xl shadow-md">
         <img
           src={char.image}
