@@ -11,7 +11,7 @@ export default function ChooseYourAllies() {
     { name: "Ethan", class: "Rogue", hpMax: 25, hpCurrent: 25, image: Ethan },
     { name: "Rui", class: "Bard", hpMax: 23, hpCurrent: 23, image: Rui },
     { name: "Elron", class: "Wizard", hpMax: 20, hpCurrent: 20, image: Elron },
-    { name: "All Wise", class: "Wizard", hpMax: 20, hpCurrent: 20, image: Wise },
+    { name: "All Wise", class: "Wizard", hpMax: 18, hpCurrent: 18, image: Wise },
     { name: "Dr. Muscle", class: "Cleric", hpMax: 21, hpCurrent: 21, image: Muscle },
   ]
   return (

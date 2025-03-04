@@ -61,6 +61,6 @@ export const Monsters = [
     { id: 28, name: "Vine Blight", hp: 26, maxHp: 26, ac: 12, stats: { str: 15, dex: 8, con: 14, int: 6, wis: 10, cha: 3 }, image: Vine },
     { id: 29, name: "Wererat", hp: 33, maxHp: 33, ac: 12, stats: { str: 10, dex: 15, con: 12, int: 11, wis: 10, cha: 8 }, image: WereRat },
     { id: 30, name: "Will-o-Wisp", hp: 22, maxHp: 22, ac: 19, stats: { str: 1, dex: 28, con: 10, int: 13, wis: 14, cha: 11 }, image: WilloWisp },
-    { id: 31, name: "Orc Comander", hp: 56, maxHp: 56, ac: 19, stats: { str: 18, dex: 14, con: 16, int: 7, wis: 11, cha: 10 },image: OrcComander },
-    { id: 32, name: "Ice Orc", hp: 40, maxHp: 40, ac: 17, stats: { str: 18, dex: 12, con: 18, int: 1, wis: 8, cha: 10 },image: IceOrc},
+    { id: 31, name: "Orc Comander", hp: 60, maxHp: 60, ac: 19, stats: { str: 18, dex: 12, con: 18, int: 7, wis: 11, cha: 10 },image: OrcComander },
+    { id: 32, name: "Ice Orc", hp: 30, maxHp: 30, ac: 17, stats: { str: 18, dex: 8, con: 16, int: 5, wis: 7, cha: 5 },image: IceOrc},
 ];
