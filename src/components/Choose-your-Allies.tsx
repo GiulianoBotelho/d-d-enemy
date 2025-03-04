@@ -7,12 +7,12 @@ import Rui from '../assets/images/Allies/Rui.png'
 import Wise from '../assets/images/Allies/All Wise.png'
 export default function ChooseYourAllies() {
   const Allies = [
-    { name: "Dalton", class: "Fighter", hpMax: 23, hpCurrent: 23, image: Dalton },
-    { name: "Ethan", class: "Rogue", hpMax: 19, hpCurrent: 19, image: Ethan },
-    { name: "Rui", class: "Bard", hpMax: 18, hpCurrent: 18, image: Rui },
-    { name: "Elron", class: "Wizard", hpMax: 15, hpCurrent: 15, image: Elron },
-    { name: "All Wise", class: "Wizard", hpMax: 15, hpCurrent: 15, image: Wise },
-    { name: "Dr. Muscle", class: "Cleric", hpMax: 19, hpCurrent: 19, image: Muscle },
+    { name: "Dalton", class: "Fighter", hpMax: 31, hpCurrent: 31, image: Dalton },
+    { name: "Ethan", class: "Rogue", hpMax: 25, hpCurrent: 25, image: Ethan },
+    { name: "Rui", class: "Bard", hpMax: 23, hpCurrent: 23, image: Rui },
+    { name: "Elron", class: "Wizard", hpMax: 20, hpCurrent: 20, image: Elron },
+    { name: "All Wise", class: "Wizard", hpMax: 20, hpCurrent: 20, image: Wise },
+    { name: "Dr. Muscle", class: "Cleric", hpMax: 21, hpCurrent: 21, image: Muscle },
   ]
   return (
 

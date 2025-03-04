@@ -28,7 +28,8 @@ import Veteran from '../assets/images/Inimigos DnD/Veteran.png';
 import Vine from '../assets/images/Inimigos DnD/Vine Blight.png';
 import WereRat from '../assets/images/Inimigos DnD/Wererat.png';
 import WilloWisp from '../assets/images/Inimigos DnD/will-o-wisp.png';
-
+import OrcComander from '../assets/images/Inimigos DnD/Orc Comandante.png'
+import IceOrc from '../assets/images/Inimigos DnD/orc de gelo.png'
 export const Monsters = [
     { id: 1, name: "Anchorite of Talos", hp: 58, maxHp: 58, ac: 13, stats: { str: 16, dex: 13, con: 14, int: 9, wis: 15, cha: 12 }, image: AnchoriteOfTalos },
     { id: 2, name: "Ankheg", hp: 39, maxHp: 39, ac: 14, stats: { str: 17, dex: 11, con: 13, int: 1, wis: 13, cha: 6 }, image: Ankheg },
@@ -60,4 +61,6 @@ export const Monsters = [
     { id: 28, name: "Vine Blight", hp: 26, maxHp: 26, ac: 12, stats: { str: 15, dex: 8, con: 14, int: 6, wis: 10, cha: 3 }, image: Vine },
     { id: 29, name: "Wererat", hp: 33, maxHp: 33, ac: 12, stats: { str: 10, dex: 15, con: 12, int: 11, wis: 10, cha: 8 }, image: WereRat },
     { id: 30, name: "Will-o-Wisp", hp: 22, maxHp: 22, ac: 19, stats: { str: 1, dex: 28, con: 10, int: 13, wis: 14, cha: 11 }, image: WilloWisp },
+    { id: 31, name: "Orc Comander", hp: 56, maxHp: 56, ac: 19, stats: { str: 18, dex: 14, con: 16, int: 7, wis: 11, cha: 10 },image: OrcComander },
+    { id: 32, name: "Ice Orc", hp: 40, maxHp: 40, ac: 17, stats: { str: 18, dex: 12, con: 18, int: 1, wis: 8, cha: 10 },image: IceOrc},
 ];

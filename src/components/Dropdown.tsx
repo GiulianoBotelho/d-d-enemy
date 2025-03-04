@@ -11,7 +11,7 @@ export default function SelectDropdown({ options, onSelect }: SelectDropdownProp
 
   const handleSelect = (value: string) => {
     setSelected(value);
-    onSelect(value); // Chama a função ao selecionar
+    onSelect(value); 
     setIsOpen(false);
   };
 
