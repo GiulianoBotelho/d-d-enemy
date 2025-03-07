@@ -9,6 +9,8 @@ interface Enemy {
   ac: number;
   hp: number;
   maxHp: number;
+  resist: string; // Adicionado
+  imunite: string; // Adicionado
   stats: {
     str: number;
     dex: number;
@@ -133,6 +135,16 @@ export default function EnemiesInBattle() {
               <p className="text-sm text-gray-300">CHA: {enemy.stats.cha} ({calculateBonus(enemy.stats.cha)})</p>
             </div>
 
+            
+            <div className="w-full flex flex-col items-center gap-2 mt-4">
+              <p className="text-sm text-gray-300 bg-gray-800 px-4 py-1 rounded-lg">
+                <strong>Resistência:</strong> {enemy.resist || "Nenhuma"}
+              </p>
+              <p className="text-sm text-gray-300 bg-gray-800 px-4 py-1 rounded-lg">
+                <strong>Imunidade:</strong> {enemy.imunite || "Nenhuma"}
+              </p>
+            </div>
+
             <div className="flex flex-col gap-2 w-full mt-4">
               <div className="flex justify-between items-center w-full">
                 <input
@@ -168,10 +180,8 @@ export default function EnemiesInBattle() {
           </div>
         ))
       ) : (
-        <div className="h-screen text-white font-bold text-center flex items-center justify-center flex-col gap-6">
-          <div className="relative flex flex-col items-center justify-center px-6 py-4 rounded-lg shadow-2xl">
-            <p className="text-4xl font-extrabold text-amber-400 drop-shadow-lg">Vitória!</p>
-          </div>
+        <div className="h-screen text-white font-bold text-center flex items-center justify-center">
+          <p className="text-4xl font-extrabold text-amber-400">Vitória!</p>
         </div>
       )}
     </>
