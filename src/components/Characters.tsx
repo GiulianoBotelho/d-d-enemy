@@ -44,7 +44,6 @@ export default function Characters() {
   const [skills, setSkills] = useState<Record<string, Skill>>(initialSkills);
   const [spellSlots, setSpellSlots] = useState<Record<string, SpellSlot>>(initialSpellSlots);
 
-
   useEffect(() => {
     localStorage.setItem(`char_hp_${char.id}`, currentHp.toString());
   }, [currentHp]);
@@ -115,6 +114,9 @@ export default function Characters() {
     setExtraHp(0);
   };
 
+  const healthPercentage = (currentHp / char.hpMax) * 100;
+  const isLowHealth = healthPercentage <= 30;
+
   return (
     <div className="flex flex-col gap-4 p-4 h-80 w-85 rounded-2xl bg-gray-900">
       {/* Header */}
@@ -155,9 +157,12 @@ export default function Characters() {
             transition={{ duration: 0.5 }}
           >
             <motion.div
-              className="h-full bg-emerald-700"
-              style={{ width: `${(currentHp / char.hpMax) * 100}%` }}
-              animate={{ width: `${(currentHp / char.hpMax) * 100}%` }}
+              className="h-full"
+              style={{ width: `${healthPercentage}%` }}
+              animate={{
+                width: `${healthPercentage}%`,
+                backgroundColor: isLowHealth ? '#b91c1c' : '#15803d'
+              }}
               transition={{ duration: 0.5 }}
             />
           </motion.div>
@@ -237,52 +242,67 @@ export default function Characters() {
       </div>
 
       {/* Modal de Cura */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-gray-800 rounded-xl p-6 w-full max-w-md border-2 border-fuchsia-900/50">
-            <h3 className="text-xl font-bold text-fuchsia-300 mb-4">Gerenciar Vida</h3>
-            
-            <div className="space-y-4">
-              <div>
-                <input
-                  type="number"
-                  placeholder="Valor de cura"
-                  onChange={(e) => setHealAmount(Number(e.target.value))}
-                  className="w-full bg-gray-700 text-fuchsia-100 placeholder-fuchsia-400/60 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
-                />
-                <button
-                  onClick={handleHeal}
-                  className="w-full mt-2 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors"
-                >
-                  Aplicar Cura
-                </button>
-              </div>
-
-              <div>
-                <input
-                  type="number"
-                  placeholder="HP Temporário"
-                  onChange={(e) => setHealAmount(Number(e.target.value))}
-                  className="w-full bg-gray-700 text-fuchsia-100 placeholder-fuchsia-400/60 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
-                />
-                <button
-                  onClick={handleExtraHp}
-                  className="w-full mt-2 py-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg transition-colors"
-                >
-                  Adicionar Escudo
-                </button>
-              </div>
-
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="w-full py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors"
-              >
-                Fechar
-              </button>
-            </div>
+{isModalOpen && (
+  <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div className="bg-gray-800 rounded-xl p-6 w-full max-w-md border-2 border-fuchsia-900/50 shadow-2xl">
+      <div className="flex justify-between items-center mb-6">
+        <h3 className="text-2xl font-bold text-fuchsia-300">Gerenciar Vida</h3>
+        <button 
+          onClick={() => setIsModalOpen(false)}
+          className="p-1 hover:bg-gray-700/30 rounded-full"
+        >
+          <Cross className="text-fuchsia-400" size={24} />
+        </button>
+      </div>
+      
+      <div className="space-y-6">
+        {/* Seção de Cura */}
+        <div className="space-y-3">
+          <label className="text-fuchsia-100 text-sm font-medium">Cura permanente</label>
+          <div className="flex flex-col gap-3">
+            <input
+              type="number"
+              placeholder="Quantidade de cura..."
+              onChange={(e) => setHealAmount(Number(e.target.value))}
+              className="w-full bg-gray-700/50 text-fuchsia-100 placeholder-fuchsia-300/70 
+                        rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-fuchsia-500
+                        border border-fuchsia-900/30"
+            />
+            <button
+              onClick={handleHeal}
+              className="w-full py-3 bg-emerald-700 text-white 
+                        rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+            >
+              <span> Aplicar Cura</span>
+            </button>
           </div>
         </div>
-      )}
+
+        {/* Seção de Escudo */}
+        <div className="space-y-3">
+          <label className="text-fuchsia-100 text-sm font-medium">HP Temporário</label>
+          <div className="flex flex-col gap-3">
+            <input
+              type="number"
+              placeholder="Quantidade de escudo..."
+              onChange={(e) => setHealAmount(Number(e.target.value))}
+              className="w-full bg-gray-700/50 text-fuchsia-100 placeholder-fuchsia-300/70 
+                        rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-fuchsia-500
+                        border border-fuchsia-900/30"
+            />
+            <button
+              onClick={handleExtraHp}
+              className="w-full py-3 bg-blue-600  text-white 
+                        rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+            >
+              <span>🛡️ Adicionar Escudo</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }
