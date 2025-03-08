@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./pages";
 import Battle from "./pages/battle";
