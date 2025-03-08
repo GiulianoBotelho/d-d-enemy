@@ -125,18 +125,18 @@ export default function ChooseYourAllies() {
               <div className="ml-3 flex-1">
                 <div className="flex items-baseline justify-between">
                   <h2 className="text-lg font-semibold text-fuchsia-300">{char.name}</h2>
-                  <span className="text-xs text-fuchsia-500/80 bg-fuchsia-900/20 px-2 py-1 rounded-full">
+                  <span className="text-xs text-fuchsia-50 bg-fuchsia-900/20 px-2 py-1 rounded-full">
                     {char.class}
                   </span>
                 </div>
                 <div className="flex items-center gap-2 mt-1">
                   <div className="h-1 w-full bg-fuchsia-900/30 rounded-full overflow-hidden">
                     <div 
-                      className="h-full bg-fuchsia-500" 
+                      className="h-full bg-emerald-400" 
                       style={{ width: `${(char.hpCurrent / char.hpMax) * 100}%` }}
                     />
                   </div>
-                  <span className="text-xs text-fuchsia-400">{char.hpCurrent}/{char.hpMax}</span>
+                  <span className="text-xs text-fuchsia-50">{char.hpCurrent}/{char.hpMax}</span>
                 </div>
               </div>
             </div>

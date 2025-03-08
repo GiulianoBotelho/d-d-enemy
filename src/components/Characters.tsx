@@ -116,7 +116,7 @@ export default function Characters() {
   };
 
   return (
-    <div className="flex flex-col gap-4 p-4 h-80 rounded-2xl bg-gray-900">
+    <div className="flex flex-col gap-4 p-4 h-80 w-85 rounded-2xl bg-gray-900">
       {/* Header */}
       <div className="bg-gray-800 rounded-xl p-4 shadow-lg border-2 border-fuchsia-900/50">
         <div className="flex items-center gap-4">
