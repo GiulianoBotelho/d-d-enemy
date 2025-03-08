@@ -60,7 +60,7 @@ export default function ChooseYourAllies() {
       hpCurrent: 23,
       image: Rui,
       skills: {
-        inspiration: { max: 4, current: 4 }
+        inspiration: { max: 3, current: 3 }
       },
       spellSlots: {
         lvl1: { max: 4, current: 4 },
